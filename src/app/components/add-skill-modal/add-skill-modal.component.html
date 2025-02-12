@@ -1,0 +1,28 @@
+<!-- Modal -->
+<div class="modal fade show" tabindex="-1" role="dialog" style="display: block; background: rgba(0,0,0,0.5)">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add a New Skill</h5>
+                <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="addSkill()">
+                    <div class="form-group">
+                        <label for="skillName">Skill Name</label>
+                        <input type="text" id="skillName" [(ngModel)]="skillName" name="name" class="form-control"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="skillDescription">Skill Description</label>
+                        <textarea id="skillDescription" [(ngModel)]="skillDescription" name="description"
+                            class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Add Skill</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

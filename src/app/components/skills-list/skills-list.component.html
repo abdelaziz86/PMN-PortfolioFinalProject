@@ -1,0 +1,16 @@
+<div class="mb-3">
+    <button (click)="openModal()" class="btn btn-primary">
+        <i class="fas fa-plus-circle"></i> Add Skill
+    </button>
+</div>
+
+<!-- Modal Component for Adding Skill -->
+<app-add-skill-modal *ngIf="showModal" (skillAdded)="onSkillAdded($event)"></app-add-skill-modal>
+
+<div *ngIf="skills.length === 0" class="alert alert-warning text-center">
+    No skills added yet. Click "Add Skill" to begin.
+</div>
+
+<div *ngFor="let skill of skills" class="skill-card mb-3">
+    <app-skill-card [skill]="skill" (delete)="onDeleteSkill(skill.id)"></app-skill-card>
+</div>
