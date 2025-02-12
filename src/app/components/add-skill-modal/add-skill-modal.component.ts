@@ -13,7 +13,6 @@ export class AddSkillModalComponent {
   skillName: string = '';
   skillDescription: string = '';
 
-  // Close the modal by emitting the skill
   addSkill() {
     if (this.skillName && this.skillDescription) {
       this.skillAdded.emit({ name: this.skillName, description: this.skillDescription });
@@ -24,7 +23,6 @@ export class AddSkillModalComponent {
     }
   }
 
-  // Close modal (for demo purposes here, you can extend to use Angular's modal component)
   closeModal() {
     this.skillName = '';
     this.skillDescription = '';
